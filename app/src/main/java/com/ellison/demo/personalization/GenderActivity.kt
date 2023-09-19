@@ -17,6 +17,9 @@ import kotlinx.coroutines.launch
 /**
  * 作者博客:
  *      https://blog.csdn.net/allisonchen/article/details/131269883?spm=1001.2014.3001.5501
+ *
+ * TODO: 注意,需要把应用语言设置为法语.前提是应用xml application标签下配置localeConfig(应用偏向语言的种类)
+ *  官方链接: https://developer.android.com/about/versions/13/features/app-languages?hl=zh-cn
  */
 class GenderActivity : AppCompatActivity() {
     private lateinit var gIM: GrammaticalInflectionManager
@@ -68,13 +71,11 @@ class GenderActivity : AppCompatActivity() {
         binding.textview.text = newText
 
         // not work
-        binding.textview.invalidate()
+        // binding.textview.invalidate()
 
         // not work either
-        binding.textview.dispatchConfigurationChanged(newConfig)
+        // binding.textview.dispatchConfigurationChanged(newConfig)
         // 自定义 TextView 复写 onConfigurationChanged()
-
-        // TODO: 尽是bug,依然没有效果??
     }
 
     @RequiresApi(34)

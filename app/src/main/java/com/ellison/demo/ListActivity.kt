@@ -21,7 +21,7 @@ class ListActivity : AppCompatActivity() {
         "语音识别" to RecognitionActivity::class.java,
         "Android 14新API：直接监听截屏操作" to ScreenShotActivity::class.java,
         "Android 14新功能HighLights：快速实现文本高亮" to TextViewActivity::class.java,
-        "333333" to GenderActivity::class.java,
+        "Android 14新特性：语法性别" to GenderActivity::class.java,
         "444444" to ShareSheetActivity::class.java,
         "555555" to PathActivity::class.java,
     )
