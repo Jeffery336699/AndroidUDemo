@@ -3,97 +3,60 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.DETECT_SCREEN_CAPTURE" />
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <queries>
         <intent>
-            <action
-                android:name="android.speech.RecognitionService" />
+            <action android:name="android.speech.RecognitionService" />
         </intent>
     </queries>
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name_2"
         android:supportsRtl="true"
-        android:enableOnBackInvokedCallback="true"
         android:theme="@style/Theme.TextViewHighlightsDemo"
         tools:targetApi="31">
         <activity
-            android:name=".capture.ScreenShotActivity"
-            android:label="TestCapture"
-            android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
-
-        <activity
-            android:name=".textView.TextViewActivity"
-            android:label="TestTextView"
-            android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
-
-        <activity
-            android:name=".personalization.GenderActivity"
-            android:label="TestGrammaticalGender"
-            android:configChanges="grammaticalGender"
-            android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
-
-        <activity
-            android:name=".share.ShareSheetActivity"
-            android:label="TestShareSheet"
-            android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
-
-        <activity
-            android:name=".recognition.client.RecognitionActivity"
-            android:label="TestRecognition"
+            android:name=".ListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".capture.ScreenShotActivity"
+            android:label="TestCapture"/>
+        <activity
+            android:name=".textView.TextViewActivity"
+            android:label="TestTextView"/>
+        <activity
+            android:name=".personalization.GenderActivity"
+            android:configChanges="grammaticalGender"
+            android:label="TestGrammaticalGender"/>
+        <activity
+            android:name=".share.ShareSheetActivity"
+            android:label="TestShareSheet"/>
+        <activity
+            android:name=".recognition.client.RecognitionActivity"
+            android:label="TestRecognition"/>
         <activity
             android:name=".path.PathActivity"
-            android:label="TestPath"
-            android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
+            android:label="TestPath"/>
 
         <service
             android:name=".recognition.service.CommonRecognitionService"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.speech.RecognitionService"/>
+                <action android:name="android.speech.RecognitionService" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>

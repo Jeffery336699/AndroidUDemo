@@ -11,6 +11,10 @@ import android.os.Looper
 import android.widget.Toast
 import com.ellison.demo.databinding.RecognitionLayoutBinding
 
+/**
+ * 作者该篇语音识别博客:
+ *      https://blog.csdn.net/allisonchen/article/details/132392041?spm=1001.2014.3001.5501
+ */
 class RecognitionActivity : AppCompatActivity(), ASRResultListener {
     private lateinit var binding: RecognitionLayoutBinding
 
@@ -36,7 +40,7 @@ class RecognitionActivity : AppCompatActivity(), ASRResultListener {
 
             ActivityCompat.requestPermissions(
                 this,
-                arrayOf<String>(Manifest.permission.RECORD_AUDIO),
+                arrayOf(Manifest.permission.RECORD_AUDIO),
                 100
             )
         } else {

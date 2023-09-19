@@ -1,8 +1,10 @@
 package com.ellison.demo.capture
 
+import android.app.Activity.ScreenCaptureCallback
 import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.ellison.demo.databinding.ScreenShotBinding
 
@@ -29,6 +31,7 @@ class ScreenShotActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
+    @RequiresApi(34)
     override fun onStart() {
         super.onStart()
 
@@ -36,6 +39,7 @@ class ScreenShotActivity : AppCompatActivity() {
         registerScreenCaptureCallback(mainExecutor, screenCaptureCallback)
     }
 
+    @RequiresApi(34)
     override fun onStop() {
         super.onStop()
 

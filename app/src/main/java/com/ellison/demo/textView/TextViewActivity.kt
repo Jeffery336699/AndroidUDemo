@@ -6,19 +6,25 @@ import android.os.Bundle
 import android.text.Highlights
 import android.util.Log
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.ellison.demo.databinding.TextviewLayoutBinding
 
+/**
+ * 参考作者博客:
+ *      https://blog.csdn.net/allisonchen/article/details/129765885?spm=1001.2014.3001.5501
+ */
 class TextViewActivity : AppCompatActivity() {
     companion object {
-        const val TEXT = "val builder = Highlights.Builder()"
+        const val TEXT = "val builder very Highlights.Builder good()"
         const val TEXT_LONG = "val builder = Highlights.Builder()val val val val val val val val "
     }
 
-    var textView1Highlights: Highlights? = null
+    private var textView1Highlights: Highlights? = null
 
 //    var textViewHighlightsForSearch: Highlights? = null
 
+    @RequiresApi(34)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = TextviewLayoutBinding.inflate(layoutInflater)
@@ -41,7 +47,7 @@ class TextViewActivity : AppCompatActivity() {
         with(binding.textview1) {
             text = TEXT
             val builder = Highlights.Builder()
-                .addRange(yellowPaint, 0, 3)
+                .addRange(yellowPaint, 0, 3) // 左闭右开
                 .addRange(greenPaint, 14, 24)
                 .addRange(greenPaint, 25, 32)
             highlights = builder.build()
@@ -88,9 +94,12 @@ class TextViewActivity : AppCompatActivity() {
             textView1Highlights?.apply {
                 // Change color
                 getPaint(1).color = Color.BLUE
-                // Change range
+                // Change range fixme:可能android 14预览版bug(范围没起效果)
                 getRanges(1)[0] -= 3
                 getRanges(1)[1] += 1
+
+                getPaint(2).color = Color.RED
+                getRanges(2)[1] += 4
 
                 Log.d("HighLights", "textview1 textView1Highlights' size:$size")
                 for (i in 0 until size) {
