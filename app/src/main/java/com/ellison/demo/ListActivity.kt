@@ -22,8 +22,8 @@ class ListActivity : AppCompatActivity() {
         "Android 14新API：直接监听截屏操作" to ScreenShotActivity::class.java,
         "Android 14新功能HighLights：快速实现文本高亮" to TextViewActivity::class.java,
         "Android 14新特性：语法性别" to GenderActivity::class.java,
-        "444444" to ShareSheetActivity::class.java,
-        "555555" to PathActivity::class.java,
+        "Android 14新特性：自定义分享界面" to ShareSheetActivity::class.java,
+        "Android 14新特性：Path的操作记录与数据" to PathActivity::class.java,
     )
 
     val keys = mMap.keys.toList()
